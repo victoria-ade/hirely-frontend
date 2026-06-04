@@ -12,7 +12,7 @@ const Navbar = () => {
   
   return (
     <nav className="bg-white shadow-sm border-b border-gray-200">
-      <div className="max-w-7xl mx-auto px-4 flex items-center justify between">
+      <div className="max-w-7xl mx-auto px-4 flex items-center justify-between">
         <Link to="/" className="text-2xl font-bold text-blue-600">
           Hirely
         </Link>
