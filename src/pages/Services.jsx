@@ -46,7 +46,7 @@ const Services = () => {
       const response = await api.get('/services', {params})
       setServices(response.data)
     } catch (err) {
-      setError('Failed to load services.Please try again.')
+      setError('Failed to load services. Please try again.')
     } finally {
       setLoading(false)
     }
@@ -99,10 +99,11 @@ const Services = () => {
             key={category}
             onClick={() => setSelectedCategory(category)}
             className={`px-4 py-2 rounded-full text-sm font-medium capitalize transition-colors ${
-              selectedCategory === category
-              ? 'bg-blue-600 text-white'
-              : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
-            }`}>
+                selectedCategory === category
+                  ? 'bg-blue-600 text-white'
+                  : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+              }`}
+            >
               {category}
             </button>
           ))}
@@ -146,7 +147,7 @@ const Services = () => {
               className="bg-white rounded-2xl border border-gray-200 p-6 hover:shadow-md hover:border-blue-200 transition-all group">
 
                 {/* Category Badge */}
-                <span className="{`inline-block px-3 py-1 rounded-full text-xs font-medium capitalize mb-4 ${categoryColors[service.category]}`}">
+                <span className={`inline-block px-3 py-1 rounded-full text-xs font-medium capitalize mb-4 ${categoryColors[service.category]}`}>
                   {service.category}
                 </span>
 
@@ -180,7 +181,7 @@ const Services = () => {
 
                 {/* Availability */}
                 <div className="mt-3">
-                  <span className="{`text-xs font-medium ${service.isAvailable ? 'text-green-600 : 'text-red-500'}`}">
+                  <span className={`text-xs font-medium ${service.isAvailable ? 'text-green-600' : 'text-red-500'}`}>
                     {service.isAvailable ? '● Available' : '● Unavailable'}
                   </span>
                 </div>
