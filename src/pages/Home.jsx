@@ -1,3 +1,4 @@
+import { formatCurrency } from '../utils/formatCurrency'
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
@@ -171,8 +172,8 @@ const Home = () => {
                 </p>
                 <div className="flex items-center justify-between pt-4 border-t border-gray-100">
                   <p className="text-xl font-bold text-blue-600">
-                    ${service.price}
-                  </p>
+  {formatCurrency(service.price)}
+</p>
                   <p className="text-sm text-gray-400">{service.location}</p>
                 </div>
               </Link>

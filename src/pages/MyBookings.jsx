@@ -1,3 +1,4 @@
+import { formatCurrency } from '../utils/formatCurrency'
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import api from '../services/api'
@@ -190,8 +191,8 @@ setBookings(data)
                         Price
                       </p>
                       <p className="text-sm font-bold text-blue-600">
-                        ${booking.service?.price}
-                      </p>
+  {formatCurrency(booking.service?.price)}
+</p>
                     </div>
                     {booking.message && (
                       <div className="col-span-2 md:col-span-3">

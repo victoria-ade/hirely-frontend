@@ -1,3 +1,4 @@
+import { formatCurrency } from '../utils/formatCurrency'
 import {useState, useEffect} from 'react'
 import {Link} from 'react-router-dom'
 import api from '../services/api'
@@ -137,7 +138,7 @@ const Services = () => {
       {!loading && !error && services.length > 0 && (
         <div>
           <p className="text-gray-500 text-sm mb-4">
-            {services.lenngth} service{services.length !== 1 ? 's' : ''} found
+            {services.length} service{services.length !== 1 ? 's' : ''} found
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map((service) => (
@@ -164,8 +165,8 @@ const Services = () => {
                 {/* Footer */}
                 <div className="flex items-center justify-between pt-4 border-t border-gray-100">
                   <div>
-                    <p className="text-2xl font-bold text-blue-600">
-                      ${service.price}
+                    <p className="text-2xl    font-bold text-blue-600">
+                     {formatCurrency(service.price)}
                     </p>
                     <p className="text-sm text-gray-400">per service</p>
                   </div>

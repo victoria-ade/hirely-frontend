@@ -1,3 +1,4 @@
+import { formatCurrency } from '../utils/formatCurrency'
 import { useState, useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
@@ -195,8 +196,8 @@ const ServiceDetail = () => {
             {/* Price */}
             <div className="text-center mb-6">
               <p className="text-4xl font-bold text-blue-600">
-                ${service.price}
-              </p>
+  {formatCurrency(service.price)}
+</p>
               <p className="text-gray-400 text-sm mt-1">per service</p>
             </div>
 

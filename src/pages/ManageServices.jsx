@@ -1,3 +1,4 @@
+import { formatCurrency } from '../utils/formatCurrency'
 import { useState, useEffect } from 'react'
 import { useForm } from 'react-hook-form'
 import api from '../services/api'
@@ -114,8 +115,8 @@ const ServiceModal = ({ isOpen, onClose, onSubmit, defaultValues, loading }) => 
           {/* Price */}
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">
-              Price ($)
-            </label>
+  Price (₦)
+</label>
             <input
               {...register('price', {
                 required: 'Price is required',
@@ -301,7 +302,6 @@ const ManageServices = () => {
 
   const handleDelete = async () => {
   try {
-    console.log('Deleting service:', deletingService) // ← add this
     setDeleteLoading(true)
     await api.delete(`/services/${deletingService._id}`)
     setServices((prev) => prev.filter((s) => s._id !== deletingService._id))
@@ -312,7 +312,7 @@ const ManageServices = () => {
   } finally {
     setDeleteLoading(false)
   }
-}
+ }
 
   const openCreateModal = () => {
     setEditingService(null)
@@ -410,8 +410,8 @@ const ManageServices = () => {
                   </p>
                   <div className="flex items-center gap-6">
                     <span className="text-blue-600 font-bold text-lg">
-                      ${service.price}
-                    </span>
+  {formatCurrency(service.price)}
+</span>
                     <span className="text-gray-400 text-sm">
                       📍 {service.location}
                     </span>

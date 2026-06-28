@@ -1,3 +1,4 @@
+import { formatCurrency } from '../utils/formatCurrency'
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
@@ -125,7 +126,7 @@ const ProviderDashboard = () => {
             <p className="text-gray-500 text-sm font-medium">Total Revenue</p>
             <span className="text-2xl">💰</span>
           </div>
-          <p className="text-3xl font-bold text-blue-600">${totalRevenue}</p>
+          <p className="text-3xl font-bold text-blue-600">{formatCurrency(totalRevenue)}</p>
           <p className="text-xs text-gray-400 mt-1">from completed jobs</p>
         </div>
 
