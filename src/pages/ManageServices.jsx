@@ -421,7 +421,8 @@ const ManageServices = () => {
                 {/* Action Buttons */}
                 <div className="flex flex-col gap-2 shrink-0">
                   <button
-                    onClick={() => openEditModal(service)}
+                    onClick={() => openEditModal
+                      (service)}
                     className="border border-gray-300 hover:bg-gray-50 text-gray-600 font-medium px-4 py-2 rounded-lg transition-colors text-sm"
                   >
                     Edit
