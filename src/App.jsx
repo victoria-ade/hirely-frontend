@@ -10,6 +10,7 @@ import ProviderDashboard from './pages/ProviderDashboard'
 import ManageServices from './pages/ManageServices'
 import BookingRequests from './pages/BookingRequests'
 import ProtectedRoute from './components/ProtectedRoute'
+import NotFound from './pages/NotFound'
 
 function App() {
   return (
@@ -33,7 +34,11 @@ function App() {
           <Route path="manage-services" element={<ManageServices />} />
           <Route path="booking-requests" element={<BookingRequests />} />
         </Route>
+        
+              <Route path="*" element={<NotFound />} />
+
       </Route>
+
     </Routes>
   )
 }
